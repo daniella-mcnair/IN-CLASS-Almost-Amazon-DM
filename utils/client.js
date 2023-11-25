@@ -1,11 +1,11 @@
 const client = {
-  apiKey: process.env.APP_API_KEY,
-  authDomain: process.env.APP_AUTH_DOMAIN,
-  databaseURL: process.env.APP_DATABASE_URL,
-  projectId: process.env.APP_PROJECT_ID,
-  storageBucket: process.env.APP_STORAGE_BUCKET,
-  appId: process.env.APP_APP_ID,
-  measurementId: process.env.APP_MEASUREMENT_ID,
+  apiKey: 'AIzaSyAWeZjX4EvmeilNmfYeHdQm1o1EeMQ-d6Y',
+  authDomain: 'almost-4742d.firebaseapp.com',
+  databaseURL: 'https://almost-4742d-default-rtdb.firebaseio.coms',
+  projectId: 'almost-4742d',
+  storageBucket: 'almost-4742d.appspot.com',
+  appId: '1:1096856588783:web:05eba4b62d236fa4a7e61a',
+  measurementId: 'G-JD2KGRLT10',
 };
 
 export default client;
