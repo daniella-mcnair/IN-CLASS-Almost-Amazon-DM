@@ -53,8 +53,9 @@ const domEvents = () => {
     // getSingleBook(firebaseKey).then(addBookForm); // using the callback method
     // TODO: CLICK EVENT FOR VIEW BOOK DETAILS
     if (e.target.id.includes('view-book-btn')) {
-      console.warn('VIEW BOOK', e.target.id);
-      console.warn(e.target.id.split('--'));
+      const [, firebaseKey] = e.target.id.split('--');
+    
+      getBookDetails(firebaseKey).then(viewBook);
     }
 
     // FIXME: ADD CLICK EVENT FOR DELETING AN AUTHOR
