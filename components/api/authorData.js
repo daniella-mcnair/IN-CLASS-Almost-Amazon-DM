@@ -30,7 +30,7 @@ const createAuthor = (payload) => new Promise((resolve, reject) => {
 });
 
 // FIXME: GET SINGLE AUTHOR
-const getSingleAuthor = () => new Promise((resolve, reject) => {
+const getSingleAuthor = (firebaseKey) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/authors/{${firebaseKey}}.json`, {
     method: 'GET',
     headers: {
@@ -57,7 +57,7 @@ const deleteSingleAuthor = (firebaseKey) => new Promise((resolve, reject) => {
 
 // FIXME: UPDATE AUTHOR
 const updateAuthor = (payload) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/books/${firebaseKey}.json`, {
+  fetch(`${endpoint}/books/${payload.firebaseKey}.json`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
@@ -70,15 +70,15 @@ const updateAuthor = (payload) => new Promise((resolve, reject) => {
 });
 
 // TODO: GET A SINGLE AUTHOR'S BOOKS
-const getAuthorBooks = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/authors/{${firebaseKey}}`, {
+const getAuthorBooks = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/books.json?orderBy="author_id"&equalTo=${firebaseKey}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
   })
     .then((response) => response.json())
-    .then((data) => resolve(data))
+    .then((data) => resolve(Object.values(data)))
     .catch(reject);
 });
 

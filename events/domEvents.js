@@ -3,7 +3,6 @@ import {
 } from '../components/api/bookData';
 import { showBooks } from '../pages/books';
 import addBookForm from '../components/forms/addBookForm';
-import payload from './formEvents';
 
 const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -51,7 +50,6 @@ const domEvents = () => {
       getSingleBook(firebaseKey).then((bookObj) => addBookForm(bookObj));
     }
 
-    getSingleBook(firebaseKey).then((bookObj) => addBookForm(bookObj));
     // getSingleBook(firebaseKey).then(addBookForm); // using the callback method
     // TODO: CLICK EVENT FOR VIEW BOOK DETAILS
     if (e.target.id.includes('view-book-btn')) {
